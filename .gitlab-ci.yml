@@ -1,0 +1,21 @@
+stages:
+  - build
+  - test
+
+build_job:
+  stage: build
+  tags:
+    - docker
+  script:
+    - echo "Building the project..."
+    - mkdir build
+    - echo "Build complete" > build/status.txt
+
+test_job:
+  stage: test
+  tags:
+    - docker
+  script:
+    - echo "Running tests..."
+    - echo "Tests passed!"
+
